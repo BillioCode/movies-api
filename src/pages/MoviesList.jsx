@@ -3,11 +3,10 @@ import { Card } from '../components/index';
 
 
 export const MoviesList = ({apiPath}) => {
+
   const url = `https://api.themoviedb.org/3/${apiPath}?api_key=afd804ef50f1e6b1ad6f29209e9395e6`;
 
   const {data: movies} = useFetch(url);
-
-
 
   return (
     <main>
