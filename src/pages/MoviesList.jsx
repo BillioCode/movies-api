@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Card } from '../components/index';
 
 
-export const MoviesList = () => {
+export const MoviesList = ({apiPath}) => {
   const [movies, setMovies] = useState([]);
-  const url = "https://api.themoviedb.org/3/movie/now_playing?api_key=afd804ef50f1e6b1ad6f29209e9395e6";
+  const url = `https://api.themoviedb.org/3/${apiPath}?api_key=afd804ef50f1e6b1ad6f29209e9395e6`;
 
   const fetchData = async (url) => {
     const response = await fetch(url);
@@ -15,7 +15,7 @@ export const MoviesList = () => {
 
   useEffect(() => {
     fetchData(url);
-  }, []);
+  }, [url]);
 
 
 
